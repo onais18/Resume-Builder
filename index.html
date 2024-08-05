@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+<body>
+    <nav>
+        <h1>Resume Builder</h1>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#personal-info">Personal Info</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+    </nav>
+    <section id="about">
+        <h2>Build Your ATS-Friendly Resume</h2>
+        <p>Craft a resume that passes the ATS filters with ease and highlights your skills and experience effectively.</p>
+    </section>
+    <section id="personal-info">
+        <h2>Personal Information</h2>
+        <form id="personal-info-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="John Doe">
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" placeholder="123 Main St, City, Country">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="john.doe@example.com">
+            <label for="github">GitHub:</label>
+            <input type="url" id="github" name="github" placeholder="https://github.com/johndoe">
+            <label for="summary">Summary:</label>
+            <textarea id="summary" name="summary" placeholder="Brief summary about yourself"></textarea>
+        </form>
+    </section>
+    <section id="experience">
+        <h2>Experience</h2>
+        <form id="experience-form">
+            <label for="job-title">Job Title:</label>
+            <input type="text" id="job-title" name="job-title" placeholder="Software Engineer">
+            <label for="company">Company:</label>
+            <input type="text" id="company" name="company" placeholder="Tech Company">
+            <label for="start-date">Start Date:</label>
+            <input type="month" id="start-date" name="start-date">
+            <label for="end-date">End Date:</label>
+            <input type="month" id="end-date" name="end-date">
+            <button type="button" onclick="addExperience()">Add Experience</button>
+        </form>
+    </section>
+    <section id="education">
+        <h2>Education</h2>
+        <form id="education-form">
+            <label for="degree">Degree:</label>
+            <input type="text" id="degree" name="degree" placeholder="Bachelor of Science">
+            <label for="institution">Institution:</label>
+            <input type="text" id="institution" name="institution" placeholder="University Name">
+            <label for="edu-start-date">Start Date:</label>
+            <input type="month" id="edu-start-date" name="edu-start-date">
+            <label for="edu-end-date">End Date:</label>
+            <input type="month" id="edu-end-date" name="edu-end-date">
+            <button type="button" onclick="addEducation()">Add Education</button>
+        </form>
+    </section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <form id="projects-form">
+            <label for="project-title">Project Title:</label>
+            <input type="text" id="project-title" name="project-title" placeholder="Project Name">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" placeholder="Project description"></textarea>
+            <button type="button" onclick="addProject()">Add Project</button>
+        </form>
+    </section>
+    <section id="resume-preview">
+        <h2>Resume Preview</h2>
+        <div id="resume-content">
+            <!-- Dynamically generated content will appear here -->
+        </div>
+        <button id="download" onclick="downloadPDF()">Download PDF</button>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
